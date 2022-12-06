@@ -55,17 +55,13 @@ const iconWeather = document.querySelector(".iconoClima");
       );
 
     const data = await res.json();
-    
-
+  
     displayData(data);
   }
 
   const displayData = (obj) =>{
-   console.log(obj);
     weather.innerHTML = Math.floor(obj.main.temp)+"ºC";
-    console.log(weather.textContent);
     const icon = obj.weather[0].icon;
-    console.log(icon)
     iconWeather.innerHTML = `<img src='../icons/${icon}.png' class="imagenIcono"></img>`
   }
 
