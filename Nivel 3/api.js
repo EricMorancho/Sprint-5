@@ -18,7 +18,7 @@ const jokeText = document.querySelector(".joke");
     const { joke } = await buscarChiste();
     actualJoke=joke;
     jokeText.innerText = joke;
-    display();
+    refresh();
   }
 
   function jokeScore(nota){
@@ -38,14 +38,16 @@ const jokeText = document.querySelector(".joke");
   function display(){
     let showBtn = document.getElementById("scoreButtons");
     let showText = document.getElementById("scoreText");
-    if(showBtn.style.display === "block"){
     showBtn.style.display = "none";
     showText.style.display = "block";
-    } else {
+  }
+
+  function refresh(){
+    let showBtn = document.getElementById("scoreButtons");
+    let showText = document.getElementById("scoreText");
       showBtn.style.display = "block";
       showText.style.display = "none";
     }
-  }
   
   
 

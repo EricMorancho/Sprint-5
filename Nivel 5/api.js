@@ -17,11 +17,17 @@ const iconWeather = document.querySelector(".iconoClima");
   }
 
   async function pulsarBoton() {
-    const { joke } = await buscarChiste();
-    actualJoke=joke;
-    jokeText.innerText = joke;
+    if (randomNum() === 0){
+      const { joke } = await buscarChiste();
+      actualJoke=joke;
+      jokeText.innerText = joke;
+    } else {
+      const { value } = await ChuckNorris();
+      actualJoke = value;
+      jokeText.innerText = value;
+    }
     refresh();
-  }
+  };
 
   function jokeScore(nota){
     const d = new Date();
@@ -34,7 +40,7 @@ const iconWeather = document.querySelector(".iconoClima");
     });
 
     display();
-    console.log(reportJokes)
+    console.log(reportJokes);
   }
 
   function display(){
@@ -51,6 +57,7 @@ const iconWeather = document.querySelector(".iconoClima");
       showText.style.display = "none";
     }
   
+  
   const getWeatherData = async () =>{
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=41.3888&lon=2.159&appid=d6c0713d2f6f4fce6fbeed7403319adf&units=metric&lang=ES`,
@@ -66,6 +73,20 @@ const iconWeather = document.querySelector(".iconoClima");
     const icon = obj.weather[0].icon;
     iconWeather.innerHTML = `<img src='../icons/${icon}.png' class="imagenIcono"></img>`
   }
+
+
+  const ChuckNorris = async () => {
+    const res = await fetch('https://api.chucknorris.io/jokes/random');
+
+    const data = await res.json();
+
+    return data;
+  }
+
+const randomNum = () =>{
+  let num = Math.floor(Math.random() * 2);
+  return num;
+}
 
 
   window.onload = () => {
