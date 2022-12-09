@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg{
+    background: #ee9ca7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.jokebtn{
+    color: black;
+    border-color: #ee9ca7;
+    background-color: #ee9ca7;
+}
+
+.jokebtn:hover{
+    background-color: pink;
+}
+
+.imagenIcono{
+    height: 5rem;
+}
+
+#blop3{
+    position: fixed;
+    background-image: url("./img/blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height:80rem;
+    width: 90rem; 
+    bottom: -10rem;
+}
+
+#blop2{
+    position: absolute;
+    background-image: url("./img/blob2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height:80rem;
+    width: 120rem; 
+    margin-left: -28rem;
+    bottom: -5rem;
+}
+
+.chistes{
+    position: relative;
+    margin-top: 8rem;
+    color: white;
+}
+
+
+
+  @media only screen and (max-width: 1200px) {
+    #blop3{
+        position: fixed;
+        background-image: url("./img/blob.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height:80rem;
+        margin-left: -10rem;
+        bottom: -25rem;
+    }
+    
+    #blop2{
+        position: absolute;
+        background-image: url("./img/blob2.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height:70rem;
+        width: 120rem; 
+        margin-left: -35rem;
+        bottom: -15rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    #blop3{
+        position: fixed;
+        background-image: url("./img/blob.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height:80rem;
+        width: 60rem; 
+        bottom: -13rem;
+        margin-left: -20rem;
+    }
+    
+    #blop2{
+        position: absolute;
+        background-image: url("./img/blob2.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height:80rem;
+        width: 120rem; 
+        margin-left: -50rem;
+        bottom: -20rem;
+    }
+  }
